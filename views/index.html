@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Deposit Form</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Online Cash Deposit Form</h1><br><br>
+        <h2>Deposit Form</h2><br><br>
+        <form id="depositForm">
+            <fieldset>
+                <legend>Bank Information</legend>
+                <label for="bankName">Bank Name:</label>
+                <select id="bankName" name="BankName" required>
+                    <option value="Select">Select</option>
+                    <option value="UBI">UBI</option>
+                    <option value="Kotak">Kotak</option>
+                    <option value="SBI">SBI</option>
+                    <option value="ICICI">ICICI</option>
+                    <option value="Canara">Canara</option>
+                    <option value="CITI">CITI</option>
+                    <option value="YES Bank">YES Bank</option>
+                </select><br>
+
+                <label for="branchName">Branch Name:</label>
+                <select id="branchName" name="BranchName" required>
+                    <option value="Select">Select</option>
+                    <option value="Kavuri Hills">Kavuri Hills</option>
+                    <option value="Madhapur">Madhapur</option>
+                    <option value="Kukatpally">Kukatpally</option>
+                    <option value="KPHB">KPHB</option>
+                    <option value="Secunderabad">Secunderabad</option>
+                    <option value="Khanamet">Khanamet</option>
+                </select><br>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="Date" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Depositor Information</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="Name" required><br>
+
+                <label for="accountNumber">Account Number:</label>
+                <input type="text" id="accountNumber" name="AccountNumber" placeholder="Enter your 10-12 digit account number" required><br>
+                
+                <label for="ifsc">IFSC Code</label>
+                <input type="text" id="ifsc" name="IFSCCode" maxlength="11" required>
+            
+            </fieldset>
+
+            <fieldset>
+                <legend>Deposit Details</legend>
+                <label for="amountInNumbers">Deposit Amount:</label>
+                <input type="number" id="amountInNumbers" name="AmountInNumbers" required><br>
+
+                <label for="denominations">Denominations:</label>
+                <input type="text" id="denominations" name="Denominations" required><br>
+
+                <label for="amountInWords">Amount in Words:</label>
+                <input type="text" id="amountInWords" name="AmountInWords" required><br>
+
+                <label for="totalAmount">Total Amount:</label>
+                <input type="number" id="totalAmount" name="TotalAmount" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label for="panNumber">PAN Number:</label>
+                <input type="text" id="panNumber" name="PanNumber" placeholder="PAN Number format is ABCDE1234F" required><br>
+
+                <label for="mailId">Mail ID:</label>
+                <input type="email" id="mailId" name="MailId" required><br>
+
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="tel" id="mobileNumber" name="MobileNumber"><br>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

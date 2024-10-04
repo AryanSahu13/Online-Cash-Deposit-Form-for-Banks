@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: bankform:v1
+    container_name: deposit
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+    depends_on:
+      - mongo
+    volumes:
+      - ./views:/app/views          # Mount the views directory for HTML files
+      - ./public:/app/public        # Mount the public directory for static assets (CSS, JS, images)
+      - ./server.js:/app/server.js  # Ensure the server.js file is included
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PaiseKahan</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <script>
+        function validateLoginForm(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get the input fields
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            // Username validation (example: non-empty and at least 4 characters)
+            if (username === "" || username.length < 4) {
+                alert("Username must be at least 4 characters long.");
+                return;
+            }
+
+            // Password validation (example: non-empty and at least 6 characters)
+            if (password === "" || password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return;
+            }
+
+            // If all validations pass, submit the form
+            alert("Login successful!");
+            event.target.submit(); // Submit the form after validation passes
+        }
+    </script>
+</head>
+<body style="background-image: url('/Images/backgrnd2.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover; font-family: 'Arial', sans-serif; color: #040000; margin: 0; padding: 0; min-height: 100vh;">
+    <div class="container">
+        <header>
+            <h1>PaiseKahan</h1>
+            <p class="motto">25 din me paise double</p>
+        </header>
+        <form action="home.html" onsubmit="validateLoginForm(event)">
+            <fieldset>
+                <legend>Login</legend>
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+                
+                <button type="submit">Next</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

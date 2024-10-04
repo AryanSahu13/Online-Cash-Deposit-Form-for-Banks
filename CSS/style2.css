@@ -1,0 +1,139 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('/Images/backgrnd4.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #040000;  /* Slightly darker text for better readability */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
+.container {
+    width: 70%;
+    margin: auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Main Heading */
+h1 {
+    font-family: 'Georgia', serif;  /* Distinctive serif font for heading */
+    color: #8B0000;  /* Dark red (darker than tomato) */
+    font-size: 3.5rem;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);  /* Enhanced shadow for better highlight */
+    margin-bottom: 10px;  /* Space below the heading */
+}
+
+/* Motto or Subheading below Main Heading */
+p.motto {  /* Class to style the motto */
+    font-size: 1.5rem;  /* Increase the size */
+    color: #B22222;  /* Lighter dark red color for distinction */
+    font-weight: bold;  /* Make it bold */
+    margin-top: 5px;  /* Space above the motto */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);  /* Add subtle shadow */
+    letter-spacing: 1px;  /* Slightly increase letter spacing */
+    text-align: center;  /* Center the text */
+}
+
+/* Paragraph */
+p {
+    color: #444;  /* Darker shade of grey */
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Button Styling */
+button {
+    display: inline-block;
+    padding: 12px 30px;
+    margin: 20px auto;
+    background-color: #8B0000;  /* Dark red */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Added transform for zoom effect */
+}
+
+button:hover {
+    background-color: #5F0000;  /* Even darker red on hover */
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);  /* Slightly zoom in on hover */
+}
+
+/* Center the buttons in the container */
+.container button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Fieldset and Form Inputs */
+fieldset {
+    border: 2px solid #8B0000;  /* Dark red */
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+legend {
+    color: #8B0000;  /* Dark red */
+    font-weight: bold;
+    padding: 0 10px;
+    font-size: 1.2rem;
+}
+
+input, select {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+/* Input and Select Hover Effect */
+input:hover, select:hover {
+    border-color: #8B0000;  /* Dark red on hover */
+    box-shadow: 0 0 8px rgba(139, 0, 0, 0.2);
+}
+
+/* Responsive Design: Adjusts for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;  /* Smaller font size for heading */
+    }
+
+    p.motto {
+        font-size: 1.2rem;  /* Smaller font size for motto */
+    }
+
+    button {
+        padding: 10px 20px;  /* Smaller button padding */
+    }
+}

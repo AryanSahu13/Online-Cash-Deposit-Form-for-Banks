@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Successful</title>
+    <link rel="stylesheet" href="/CSS/style2.css"> <!-- Add your styles here -->
+</head>
+<body>
+    <div class="container">
+        <h1>Submission Successful!</h1>
+        <p>Your deposit has been successfully recorded.</p>
+        <h2>Submission Details</h2>
+        <ul id="submission-details">
+            <!-- JavaScript will populate this with submission details -->
+        </ul>
+        
+        <button onclick="window.location.href='/views/index.html'">Fill Another Form</button>
+        <button onclick="window.location.href='/views/home.html'">Home</button>
+    </div>
+
+    <script>
+        // Function to retrieve and display submission details
+        function displaySubmissionDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const deposit = {
+                BankName: urlParams.get('BankName'),
+                BranchName: urlParams.get('BranchName'),
+                Date: urlParams.get('Date'),
+                Name: urlParams.get('Name'),
+                AccountNumber: urlParams.get('AccountNumber'),
+                IFSCCode: urlParams.get('IFSCCode'),
+                MobileNumber: urlParams.get('MobileNumber'),
+                AmountInNumbers: urlParams.get('AmountInNumbers'),
+                AmountInWords: urlParams.get('AmountInWords'),
+                Denominations: urlParams.get('Denominations'),
+                TotalAmount: urlParams.get('TotalAmount'),
+                PanNumber: urlParams.get('PanNumber'),
+                MailId: urlParams.get('MailId')
+            };
+
+            const detailsList = document.getElementById('submission-details');
+            for (const key in deposit) {
+                if (deposit[key]) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${key}: ${deposit[key]}`;
+                    detailsList.appendChild(listItem);
+                }
+            }
+        }
+
+        // Call the function to display details on page load
+        displaySubmissionDetails();
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application</title>
+    <link rel="stylesheet" href="/CSS/style2.css">
+</head>
+<body>
+    <div style="width: 70%; margin: auto; padding: 30px; background-color: rgba(255, 255, 255, 0.9); border-radius: 12px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+        <h1 style="text-align: center;">Loan Application</h1>
+        <p class="motto" style="text-align: center;">Apply for Your Desired Loan</p>
+
+        <form action="/views/Approval.html" method="GET">
+            <fieldset>
+                <legend>Loan Details</legend>
+
+                <label for="loan-type">Select Loan Type:</label>
+                <select id="loan-type" name="loan-type" required>
+                    <option value="" disabled selected>Select a loan type</option>
+                    <option value="personal-loan">Personal Loan</option>
+                    <option value="home-loan">Home Loan</option>
+                    <option value="car-loan">Car Loan</option>
+                    <option value="education-loan">Education Loan</option>
+                </select>
+
+                <label for="loan-amount">Loan Amount:</label>
+                <input type="number" id="loan-amount" name="loan-amount" required min="1000" step="1000">
+
+                <label for="loan-tenure">Loan Tenure (in years):</label>
+                <select id="loan-tenure" name="loan-tenure" required>
+                    <option value="" disabled selected>Select tenure</option>
+                    <option value="1">1 Year</option>
+                    <option value="2">2 Years</option>
+                    <option value="3">3 Years</option>
+                    <option value="5">5 Years</option>
+                    <option value="10">10 Years</option>
+                </select>
+
+                <label for="income">Monthly Income:</label>
+                <input type="number" id="income" name="income" required min="10000" step="1000">
+
+                <label for="credit-score">Credit Score:</label>
+                <input type="number" id="credit-score" name="credit-score" required min="300" max="850" step="1">
+            </fieldset>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>

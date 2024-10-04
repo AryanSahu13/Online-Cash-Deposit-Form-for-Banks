@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Form - PaiseKahan</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            const dateInput = document.getElementById('date');
+            dateInput.setAttribute('min', today);
+            dateInput.setAttribute('value', today);
+        });
+
+        function handleDepositForm(event) {
+            event.preventDefault();
+            const form = event.target;
+
+            // Validate PAN card format (XXXXX0000X)
+            const pancard = form.pancard.value.trim();
+            const panPattern = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+            if (!panPattern.test(pancard)) {
+                alert('Please enter a valid PAN Card number (e.g., ABCDE1234F).');
+                return;
+            }
+
+            // Validate IFSC code format (4 alphabets followed by 7 alphanumeric characters)
+            const ifsc = form.ifsc.value.trim();
+            const ifscPattern = /^[A-Z]{4}[0-9]{7}$/;
+            if (!ifscPattern.test(ifsc)) {
+                alert('Please enter a valid IFSC code (e.g., ABCD0123456).');
+                return;
+            }
+
+            // Validate Bank Account Number (must be 13 digits)
+            const accountNumber = form['account-number'].value.trim();
+            if (accountNumber.length !== 13 || isNaN(accountNumber)) {
+                alert('Please enter a valid 13-digit bank account number.');
+                return;
+            }
+
+            // Validate Denominations (should be either 100 or 500)
+            const denomination = parseInt(form.denominations.value, 10);
+            if (denomination !== 100 && denomination !== 500) {
+                alert('Please enter a valid denomination (100 or 500 only).');
+                return;
+            }
+
+            // Validate Date (ensure not in the past)
+            const dateInput = form.date;
+            const selectedDate = new Date(dateInput.value);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            if (selectedDate < today) {
+                alert('You cannot select a past date.');
+                return;
+            }
+
+            // If all validations pass, submit the form
+            alert('Form submitted successfully!');
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PaiseKahan</h1>
+            <p class="motto">25 din me paise double</p>
+        </header>
+        <form id="deposit-form" onsubmit="handleDepositForm(event)">
+            <fieldset>
+                <legend>Bank Information</legend>
+                <label for="bank-name">Bank Name</label>
+                <select id="bank-name" required>
+                    <option>UBI</option>
+                    <option>Kotak</option>
+                    <option>HDFC</option>
+                    <option>ICICI</option>
+                    <option>Canara</option>
+                    <option>SBI</option>
+                    <option>Bank of Baroda</option>
+                    <option>YES Bank</option>
+                </select>
+                
+                <label for="branch-name">Branch Name</label>
+                <select id="branch-name" required>
+                    <option>Kavuri Hills</option>
+                    <option>Madhapur</option>
+                    <option>Khanamet</option>
+                    <option>Jubilee Hills</option>
+                    <!-- Add other branches -->
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Account Information</legend>
+                <label for="account-number">Account Number</label>
+                <input type="text" id="account-number" maxlength="13" required>
+                
+                <label for="ifsc">IFSC Code</label>
+                <input type="text" id="ifsc" maxlength="11" required>
+                
+                <label for="date">Date</label>
+                <input type="date" id="date" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Deposit Details</legend>
+                <label for="deposit-amount">Enter Deposit Amount</label>
+                <input type="number" id="deposit-amount" required>
+                
+                <label for="denominations">Enter Denominations (100, 500)</label>
+                <input type="number" id="denominations" required>
+                
+                <label for="amount-in-words">Amount in Words</label>
+                <input type="text" id="amount-in-words" required>
+                
+                <label for="total-amount">Total Amount</label>
+                <input type="number" id="total-amount" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label for="pancard">PAN Card</label>
+                <input type="text" id="pancard" maxlength="10" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+                
+                <label for="phone">Phone Number (+91)</label>
+                <input type="tel" id="phone" pattern="[0-9]{10}" required>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - PaiseKahan</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('/Images/backgrnd2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Main Container */
+        .container {
+            width: 70%;
+            margin: auto;
+            padding: 40px 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Header Styling */
+        header {
+            margin-bottom: 30px; /* Adds space between heading/motto and the buttons */
+        }
+
+        /* Main Heading */
+        h1 {
+            font-family: 'Georgia', serif;
+            color: #8B0000;
+            font-size: 4rem;
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+            margin-top: 0; /* Moves it to the top within the container */
+            margin-bottom: 10px;
+            letter-spacing: 1.5px;
+        }
+
+        /* Motto */
+        p.motto {
+            font-size: 1.6rem;
+            color: #B22222;
+            font-weight: bold;
+            margin-top: 0; /* No extra space on top */
+            margin-bottom: 40px; /* Adds space between the motto and the buttons */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+            line-height: 1.5;
+        }
+
+        /* Button Grid Styling */
+        nav {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            justify-items: center;
+        }
+
+        nav button {
+            background-color: #8B0000;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            width: 100%;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        nav button:hover {
+            background-color: #5F0000;
+            box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.4);
+            transform: scale(1.05);
+        }
+
+        /* Sign Out Button Styling */
+        .sign-out-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 160px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .sign-out-button:hover {
+            background-color: #d32f2f;
+            box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.4);
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            p.motto {
+                font-size: 1.3rem;
+            }
+
+            nav {
+                grid-template-columns: repeat(2, 1fr);  /* 2 buttons per row on smaller screens */
+            }
+
+            nav button {
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PaiseKahan</h1>
+            <p class="motto">25 din me paise double</p>
+        </header>
+        <nav>
+            <button onclick="location.href='index.html'">Deposit Form</button>
+            <button onclick="location.href='neft.html'">NEFT</button>
+            <button onclick="location.href='imps.html'">IMPS</button>
+            <button onclick="location.href='password2.html'">Balance</button>
+            <button onclick="location.href='mfunds.html'">Mutual Funds</button>
+            <button onclick="location.href='UPI.html'">UPI Payment</button>
+            <button onclick="location.href='Loan.html'">Loan</button>
+            <button onclick="location.href='QR.html'">QR Scanner</button>
+            <button onclick="location.href='others.html'">Others</button>
+        </nav>
+    </div>
+    <button class="sign-out-button" onclick="location.href='/views/main.html'">Sign Out</button>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Banking Services</title>
+    <link rel="stylesheet" href="/CSS/style2.css">
+    <style>
+        /* Additional styles for button alignment */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;  /* Allows buttons to wrap to the next line */
+            justify-content: center;  /* Center-aligns buttons */
+            margin: 20px 0;
+        }
+
+        .button-container button {
+            margin: 10px;  /* Adds spacing between buttons */
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #8B0000;  /* Dark red */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            flex: 1 0 30%;  /* Allowing up to 3 buttons per row */
+            max-width: 200px;  /* Sets a max width for buttons */
+            box-sizing: border-box;  /* Ensures padding and margin are included in width calculations */
+        }
+
+        .button-container button:hover {
+            background-color: #5F0000;  /* Darker red on hover */
+        }
+    </style>
+    <script>
+        function showServiceDetails(service) {
+            const serviceDetails = document.getElementById('service-details');
+            const services = {
+                "fundTransfer": "Transfer money quickly and easily to other bank accounts using UPI or NEFT.",
+                "billPayment": "Pay your utility bills like electricity, water, and internet from one place.",
+                "investment": "Explore various investment options such as mutual funds, stocks, and fixed deposits.",
+                "loanInquiry": "Get information about different types of loans like personal loans, home loans, and auto loans.",
+                "accountStatement": "View and download your account statement for any period.",
+                "creditCardServices": "Manage your credit cards, check outstanding balances, and view rewards."
+            };
+            serviceDetails.innerHTML = services[service] || "Details not available.";
+            serviceDetails.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div style="width: 70%; margin: auto; padding: 30px; background-color: rgba(255, 255, 255, 0.9); border-radius: 12px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+        <h1 style="text-align: center;">Other Banking Services</h1>
+        <p style="text-align: center;">Select a service to learn more:</p>
+
+        <div class="button-container">
+            <button onclick="showServiceDetails('fundTransfer')">Fund Transfer</button>
+            <button onclick="showServiceDetails('billPayment')">Bill Payment</button>
+            <button onclick="showServiceDetails('investment')">Investment Options</button>
+            <button onclick="showServiceDetails('loanInquiry')">Loan Inquiry</button>
+            <button onclick="showServiceDetails('accountStatement')">Account Statement</button>
+            <button onclick="showServiceDetails('creditCardServices')">Credit Card Services</button>
+        </div>
+
+        <div id="service-details" style="margin-top: 20px; display: none; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+            <h2>Service Details</h2>
+            <p></p>
+        </div>
+
+        <button onclick="window.location.href='/views/home.html'" style="margin-top: 20px;">Go Back to Home</button>
+    </div>
+</body>
+</html>
